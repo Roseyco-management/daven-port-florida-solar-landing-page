@@ -71,13 +71,13 @@ html {
 
 /* Selection styling */
 ::selection {
-  background: #2563eb;
+  background: #f59e0b;
   color: white;
 }
 
 /* Focus visible for accessibility */
 :focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid #f59e0b;
   outline-offset: 2px;
 }
 

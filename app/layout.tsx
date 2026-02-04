@@ -8,14 +8,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Free Vinyl Fence Estimate | Davenport, Florida',
+  title: 'Free Solar Quote | Davenport, Florida',
   description:
-    'Get a free vinyl fence estimate in Davenport, Florida. $0 Down, $0 Installation, 0% Interest O.A.C. Schedule your free estimate today!',
-  keywords: 'vinyl fence, fence installation, Davenport Florida, free estimate, fence contractor',
+    'Get a free solar panel quote in Davenport, Florida. $0 Down, $0 Installation, 0% Interest O.A.C. Start saving on your electric bill today!',
+  keywords: 'solar panels, solar installation, Davenport Florida, free quote, solar contractor, renewable energy',
   openGraph: {
-    title: 'Free Vinyl Fence Estimate | Davenport, Florida',
+    title: 'Free Solar Quote | Davenport, Florida',
     description:
-      'Get a free vinyl fence estimate in Davenport, Florida. $0 Down, $0 Installation, 0% Interest O.A.C.',
+      'Get a free solar panel quote in Davenport, Florida. $0 Down, $0 Installation, 0% Interest O.A.C.',
     type: 'website',
   },
 };

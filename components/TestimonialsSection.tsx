@@ -5,19 +5,19 @@ const testimonials = [
   {
     name: 'Maria S.',
     location: 'Davenport, FL',
-    text: 'Best decision we made for our home. The crew was professional, finished in one day, and our backyard finally feels private. Worth every penny.',
+    text: 'Best decision we made for our home. Our electric bill went from $280 to $12. The crew was professional and finished in one day. Should have done this years ago.',
     rating: 5,
   },
   {
     name: 'James R.',
     location: 'Haines City, FL',
-    text: 'Got three quotes. These guys weren\'t the cheapest, but they were the most honest. No hidden fees, showed up when they said they would. Fence looks amazing.',
+    text: 'Got three quotes. These guys weren\'t the cheapest, but they were the most honest about what we actually needed. No pushy sales tactics. System is producing more than they promised.',
     rating: 5,
   },
   {
     name: 'Patricia M.',
     location: 'Kissimmee, FL',
-    text: 'We had a wood fence that rotted after 8 years. This vinyl fence still looks brand new after 3 years. Zero maintenance. Should have done this from the start.',
+    text: 'We waited too long to go solar. In 18 months, our system has already saved us over $4,000. Plus we got a nice tax refund. The panels look great on our roof too.',
     rating: 5,
   },
 ];
@@ -36,7 +36,7 @@ export default function TestimonialsSection() {
             Don&apos;t Take Our Word For It
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Here&apos;s what your neighbors are saying about their new fences.
+            Here&apos;s what your neighbors are saying about their solar savings.
           </p>
         </div>
 
@@ -64,11 +64,11 @@ export default function TestimonialsSection() {
 
         <div className="text-center">
           <p className="text-gray-600 mb-6">
-            Join hundreds of happy homeowners who made the switch to vinyl.
+            Join hundreds of happy homeowners who made the switch to solar.
           </p>
           <ScrollLink
             href="#estimate-form"
-            className="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:-translate-y-0.5 transition-all duration-300"
+            className="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 hover:-translate-y-0.5 transition-all duration-300"
           >
             <span>Get Your Free Quote Today</span>
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

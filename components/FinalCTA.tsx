@@ -3,7 +3,7 @@ import { Clock, Calendar, Shield } from 'lucide-react';
 
 export default function FinalCTA() {
   return (
-    <section className="py-20 bg-gradient-to-br from-emerald-600 via-emerald-700 to-emerald-800 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-amber-600 via-amber-700 to-amber-800 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div
@@ -17,10 +17,10 @@ export default function FinalCTA() {
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         <div className="text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Your Perfect Fence is One Call Away
+            Energy Freedom is One Call Away
           </h2>
-          <p className="text-xl text-emerald-100 mb-10 max-w-2xl mx-auto">
-            Stop putting it off. Stop getting quotes that go nowhere. Get a real price from a local team that shows up, does the work, and stands behind it.
+          <p className="text-xl text-amber-100 mb-10 max-w-2xl mx-auto">
+            Stop paying rising utility bills. Stop waiting for the &quot;right time.&quot; Get a real savings projection from a local team that shows up, does the work, and stands behind it.
           </p>
 
           <div className="flex flex-wrap justify-center gap-8 mb-10">
@@ -30,7 +30,7 @@ export default function FinalCTA() {
               </div>
               <div className="text-left">
                 <p className="font-semibold">Quote in 24 Hours</p>
-                <p className="text-sm text-emerald-200">Usually same day</p>
+                <p className="text-sm text-amber-200">Usually same day</p>
               </div>
             </div>
             <div className="flex items-center gap-3 text-white">
@@ -38,8 +38,8 @@ export default function FinalCTA() {
                 <Calendar className="w-6 h-6" />
               </div>
               <div className="text-left">
-                <p className="font-semibold">Install This Month</p>
-                <p className="text-sm text-emerald-200">Limited spots available</p>
+                <p className="font-semibold">Fast Installation</p>
+                <p className="text-sm text-amber-200">Generating power in weeks</p>
               </div>
             </div>
             <div className="flex items-center gap-3 text-white">
@@ -47,8 +47,8 @@ export default function FinalCTA() {
                 <Shield className="w-6 h-6" />
               </div>
               <div className="text-left">
-                <p className="font-semibold">Lifetime Warranty</p>
-                <p className="text-sm text-emerald-200">We stand behind our work</p>
+                <p className="font-semibold">25-Year Warranty</p>
+                <p className="text-sm text-amber-200">We stand behind our work</p>
               </div>
             </div>
           </div>
@@ -63,7 +63,7 @@ export default function FinalCTA() {
             </svg>
           </ScrollLink>
 
-          <p className="text-emerald-200 text-sm mt-6">
+          <p className="text-amber-200 text-sm mt-6">
             Takes 60 seconds. No credit card required. No obligation.
           </p>
         </div>

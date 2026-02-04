@@ -6,24 +6,24 @@ import { ChevronDown } from 'lucide-react';
 
 const faqs = [
   {
-    question: 'How much does a vinyl fence cost?',
-    answer: 'Every property is different, which is why we provide free, no-obligation quotes. On average, homeowners invest $3,000-$8,000 depending on yard size and fence style. Remember: vinyl costs more upfront but saves thousands in maintenance over 30+ years.',
+    question: 'How much does a solar system cost?',
+    answer: 'Every home is different, which is why we provide free, customized quotes. Most homeowners pay $0 down and less per month than their current electric bill. Plus, you get the 30% federal tax credit — that\'s real money back in your pocket.',
   },
   {
     question: 'How long does installation take?',
-    answer: 'Most residential fences are installed in just one day. Larger properties may take 2 days. We\'ll give you an exact timeline during your free estimate.',
+    answer: 'Most residential solar systems are installed in just 1-2 days. The permitting process typically takes 2-4 weeks, but we handle all the paperwork for you. From signing to flipping the switch, expect about 4-6 weeks total.',
   },
   {
-    question: 'Do I need a permit?',
-    answer: 'In most Davenport areas, yes. Don\'t worry — we handle all permit paperwork for you as part of our service. No extra charge, no headaches.',
+    question: 'Do I need HOA approval?',
+    answer: 'Florida has strong solar rights laws — your HOA cannot prohibit solar panels. We\'ll help you navigate any guidelines they do have and provide all documentation needed for a smooth approval.',
   },
   {
-    question: 'What about HOA approval?',
-    answer: 'We\'re familiar with most HOA requirements in the Davenport area. We\'ll help you choose a fence style that meets your HOA guidelines and can provide documentation they typically need.',
+    question: 'What happens during power outages?',
+    answer: 'Standard grid-tied systems shut off during outages for safety. Want backup power? We offer battery storage options that keep your essentials running when the grid goes down.',
   },
   {
     question: 'How does financing work?',
-    answer: 'We offer $0 down, 0% interest financing on approved credit. Pay over time while enjoying your new fence today. We\'ll discuss all payment options during your estimate.',
+    answer: 'We offer $0 down financing with payments often lower than your current electric bill. Many homeowners see positive cash flow from day one. We\'ll show you all options during your free consultation.',
   },
   {
     question: 'What if I don\'t like the quote?',
@@ -42,7 +42,7 @@ export default function FAQSection() {
             Questions? We&apos;ve Got Answers
           </h2>
           <p className="text-gray-600">
-            Everything you need to know before getting your free quote.
+            Everything you need to know before getting your free solar quote.
           </p>
         </div>
 
@@ -75,13 +75,13 @@ export default function FAQSection() {
         <div className="text-center bg-gray-50 rounded-2xl p-8">
           <p className="text-gray-900 font-semibold mb-2">Still have questions?</p>
           <p className="text-gray-600 mb-6">
-            Get all your questions answered during your free, no-pressure estimate.
+            Get all your questions answered during your free, no-pressure consultation.
           </p>
           <ScrollLink
             href="#estimate-form"
-            className="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:-translate-y-0.5 transition-all duration-300"
+            className="inline-flex items-center gap-3 bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 hover:-translate-y-0.5 transition-all duration-300"
           >
-            <span>Schedule My Free Estimate</span>
+            <span>Schedule My Free Consultation</span>
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>

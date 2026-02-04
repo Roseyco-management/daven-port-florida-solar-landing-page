@@ -163,12 +163,12 @@ export default function EstimateForm() {
       <section id="estimate-form" className="py-20 bg-white">
         <div className="max-w-2xl mx-auto px-6">
           <div className="bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden">
-            <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 p-10 text-center">
-              <div className="w-20 h-20 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-scale-in">
+            <div className="bg-gradient-to-r from-amber-600 to-amber-700 p-10 text-center">
+              <div className="w-20 h-20 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-scale-in">
                 <CheckCircle className="w-10 h-10 text-white" />
               </div>
               <h2 className="text-3xl font-bold text-white mb-2">You&apos;re All Set!</h2>
-              <p className="text-emerald-100">
+              <p className="text-amber-100">
                 Your quote is being prepared. Expect a call within 24 hours (usually faster).
               </p>
             </div>
@@ -177,13 +177,13 @@ export default function EstimateForm() {
                 <p className="font-semibold text-gray-900 mb-4">Here&apos;s What Happens Next:</p>
                 <ul className="space-y-3">
                   {[
-                    'We\'ll call to confirm your appointment time',
-                    'Our expert visits your property (15-20 min)',
-                    'You\'ll get an exact price on the spot — no surprises',
-                    'If you love it, we can often start within the week',
+                    'We\'ll call to confirm your consultation time',
+                    'Our solar expert visits your property (30-45 min)',
+                    'You\'ll see your custom savings projection and exact pricing',
+                    'If you love it, installation can start within weeks',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-gray-600">
-                      <span className="text-emerald-500 font-bold">✓</span>
+                      <span className="text-amber-500 font-bold">✓</span>
                       {item}
                     </li>
                   ))}
@@ -211,14 +211,14 @@ export default function EstimateForm() {
       <div className="max-w-2xl mx-auto px-6">
         <div className="bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden">
           {/* Header */}
-          <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 p-10 text-center">
+          <div className="bg-gradient-to-r from-amber-600 to-amber-700 p-10 text-center">
             <h2 className="text-3xl font-bold text-white mb-2">Claim Your Free Quote</h2>
-            <p className="text-emerald-100 mb-8">Takes 60 seconds. No credit card. No commitment. Just honest pricing.</p>
+            <p className="text-amber-100 mb-8">Takes 60 seconds. No credit card. No commitment. Just honest pricing.</p>
 
             {/* Progress Bar */}
             <div className="h-1 bg-white/20 rounded-full overflow-hidden mb-5">
               <div
-                className="h-full bg-emerald-400 transition-all duration-300 rounded-full"
+                className="h-full bg-amber-400 transition-all duration-300 rounded-full"
                 style={{ width: `${(currentStep / totalSteps) * 100}%` }}
               />
             </div>
@@ -230,9 +230,9 @@ export default function EstimateForm() {
                   key={step}
                   className={`w-9 h-9 rounded-full flex items-center justify-center font-semibold text-sm transition-all duration-300 ${
                     step === currentStep
-                      ? 'bg-white text-emerald-600'
+                      ? 'bg-white text-amber-600'
                       : step < currentStep
-                      ? 'bg-emerald-400 text-white'
+                      ? 'bg-amber-400 text-white'
                       : 'bg-white/20 text-white/70'
                   }`}
                 >
@@ -256,12 +256,12 @@ export default function EstimateForm() {
                     onClick={() => handleRoleSelect('homeowner')}
                     className={`p-6 border-2 rounded-xl text-center transition-all duration-300 ${
                       formData.propertyRole === 'homeowner'
-                        ? 'border-emerald-500 bg-emerald-50'
-                        : 'border-gray-200 hover:border-emerald-300'
+                        ? 'border-amber-500 bg-amber-50'
+                        : 'border-gray-200 hover:border-amber-300'
                     }`}
                   >
                     <div className={`w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all ${
-                      formData.propertyRole === 'homeowner' ? 'bg-emerald-500' : 'bg-gray-100'
+                      formData.propertyRole === 'homeowner' ? 'bg-amber-500' : 'bg-gray-100'
                     }`}>
                       <Home className={`w-7 h-7 ${formData.propertyRole === 'homeowner' ? 'text-white' : 'text-gray-600'}`} />
                     </div>
@@ -274,12 +274,12 @@ export default function EstimateForm() {
                     onClick={() => handleRoleSelect('authorized')}
                     className={`p-6 border-2 rounded-xl text-center transition-all duration-300 ${
                       formData.propertyRole === 'authorized'
-                        ? 'border-emerald-500 bg-emerald-50'
-                        : 'border-gray-200 hover:border-emerald-300'
+                        ? 'border-amber-500 bg-amber-50'
+                        : 'border-gray-200 hover:border-amber-300'
                     }`}
                   >
                     <div className={`w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all ${
-                      formData.propertyRole === 'authorized' ? 'bg-emerald-500' : 'bg-gray-100'
+                      formData.propertyRole === 'authorized' ? 'bg-amber-500' : 'bg-gray-100'
                     }`}>
                       <UserPlus className={`w-7 h-7 ${formData.propertyRole === 'authorized' ? 'text-white' : 'text-gray-600'}`} />
                     </div>
@@ -311,7 +311,7 @@ export default function EstimateForm() {
                       onChange={handleChange}
                       placeholder="John"
                       className={`w-full px-4 py-3 border-2 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-0 transition-colors ${
-                        errors.firstName ? 'border-red-500' : 'border-gray-200 focus:border-emerald-500'
+                        errors.firstName ? 'border-red-500' : 'border-gray-200 focus:border-amber-500'
                       }`}
                     />
                     {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>}
@@ -328,7 +328,7 @@ export default function EstimateForm() {
                       onChange={handleChange}
                       placeholder="Smith"
                       className={`w-full px-4 py-3 border-2 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-0 transition-colors ${
-                        errors.lastName ? 'border-red-500' : 'border-gray-200 focus:border-emerald-500'
+                        errors.lastName ? 'border-red-500' : 'border-gray-200 focus:border-amber-500'
                       }`}
                     />
                     {errors.lastName && <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>}
@@ -345,7 +345,7 @@ export default function EstimateForm() {
                       onChange={handleChange}
                       placeholder="john@example.com"
                       className={`w-full px-4 py-3 border-2 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-0 transition-colors ${
-                        errors.email ? 'border-red-500' : 'border-gray-200 focus:border-emerald-500'
+                        errors.email ? 'border-red-500' : 'border-gray-200 focus:border-amber-500'
                       }`}
                     />
                     {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
@@ -362,7 +362,7 @@ export default function EstimateForm() {
                       onChange={handleChange}
                       placeholder="(555) 123-4567"
                       className={`w-full px-4 py-3 border-2 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-0 transition-colors ${
-                        errors.phone ? 'border-red-500' : 'border-gray-200 focus:border-emerald-500'
+                        errors.phone ? 'border-red-500' : 'border-gray-200 focus:border-amber-500'
                       }`}
                     />
                     {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
@@ -375,7 +375,7 @@ export default function EstimateForm() {
             {currentStep === 3 && (
               <div className="animate-fade-in">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Almost There!</h3>
-                <p className="text-gray-600 mb-8">Tell us where we&apos;ll be building your new fence</p>
+                <p className="text-gray-600 mb-8">Tell us where we&apos;ll be installing your solar system</p>
 
                 <div className="space-y-5">
                   <div>
@@ -389,7 +389,7 @@ export default function EstimateForm() {
                       onChange={handleChange}
                       placeholder="123 Main Street"
                       className={`w-full px-4 py-3 border-2 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-0 transition-colors ${
-                        errors.address ? 'border-red-500' : 'border-gray-200 focus:border-emerald-500'
+                        errors.address ? 'border-red-500' : 'border-gray-200 focus:border-amber-500'
                       }`}
                     />
                     {errors.address && <p className="text-red-500 text-sm mt-1">{errors.address}</p>}
@@ -406,7 +406,7 @@ export default function EstimateForm() {
                         value={formData.city}
                         onChange={handleChange}
                         className={`w-full px-4 py-3 border-2 rounded-lg text-gray-900 focus:outline-none focus:ring-0 transition-colors ${
-                          errors.city ? 'border-red-500' : 'border-gray-200 focus:border-emerald-500'
+                          errors.city ? 'border-red-500' : 'border-gray-200 focus:border-amber-500'
                         }`}
                       />
                       {errors.city && <p className="text-red-500 text-sm mt-1">{errors.city}</p>}
@@ -422,7 +422,7 @@ export default function EstimateForm() {
                         value={formData.state}
                         onChange={handleChange}
                         className={`w-full px-4 py-3 border-2 rounded-lg text-gray-900 focus:outline-none focus:ring-0 transition-colors ${
-                          errors.state ? 'border-red-500' : 'border-gray-200 focus:border-emerald-500'
+                          errors.state ? 'border-red-500' : 'border-gray-200 focus:border-amber-500'
                         }`}
                       />
                       {errors.state && <p className="text-red-500 text-sm mt-1">{errors.state}</p>}
@@ -439,7 +439,7 @@ export default function EstimateForm() {
                         onChange={handleChange}
                         placeholder="33837"
                         className={`w-full px-4 py-3 border-2 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-0 transition-colors ${
-                          errors.zip ? 'border-red-500' : 'border-gray-200 focus:border-emerald-500'
+                          errors.zip ? 'border-red-500' : 'border-gray-200 focus:border-amber-500'
                         }`}
                       />
                       {errors.zip && <p className="text-red-500 text-sm mt-1">{errors.zip}</p>}
@@ -469,7 +469,7 @@ export default function EstimateForm() {
                         min={today}
                         max={maxDateStr}
                         className={`w-full px-4 py-3 border-2 rounded-lg text-gray-900 focus:outline-none focus:ring-0 transition-colors ${
-                          errors.preferredDate ? 'border-red-500' : 'border-gray-200 focus:border-emerald-500'
+                          errors.preferredDate ? 'border-red-500' : 'border-gray-200 focus:border-amber-500'
                         }`}
                       />
                       {errors.preferredDate && <p className="text-red-500 text-sm mt-1">{errors.preferredDate}</p>}
@@ -484,7 +484,7 @@ export default function EstimateForm() {
                         value={formData.preferredTime}
                         onChange={handleChange}
                         className={`w-full px-4 py-3 border-2 rounded-lg text-gray-900 focus:outline-none focus:ring-0 transition-colors appearance-none bg-white ${
-                          errors.preferredTime ? 'border-red-500' : 'border-gray-200 focus:border-emerald-500'
+                          errors.preferredTime ? 'border-red-500' : 'border-gray-200 focus:border-amber-500'
                         }`}
                       >
                         <option value="">Select a time</option>
@@ -504,9 +504,9 @@ export default function EstimateForm() {
                       name="notes"
                       value={formData.notes}
                       onChange={handleChange}
-                      placeholder="Tell us about your project, fence type preferences, or any questions you have..."
+                      placeholder="Tell us about your energy goals, roof type, or any questions you have..."
                       rows={3}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-emerald-500 transition-colors resize-none"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-amber-500 transition-colors resize-none"
                     />
                   </div>
                 </div>
@@ -530,7 +530,7 @@ export default function EstimateForm() {
                 <button
                   type="button"
                   onClick={nextStep}
-                  className="flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-semibold transition-colors ml-auto"
+                  className="flex items-center gap-2 px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-lg font-semibold transition-colors ml-auto"
                 >
                   Continue
                   <ArrowRight className="w-5 h-5" />
@@ -539,7 +539,7 @@ export default function EstimateForm() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex items-center gap-2 px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg font-semibold transition-colors ml-auto disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex items-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white rounded-lg font-semibold transition-colors ml-auto disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>

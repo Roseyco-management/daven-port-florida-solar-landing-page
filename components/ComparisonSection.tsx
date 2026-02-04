@@ -2,12 +2,12 @@ import ScrollLink from './ScrollLink';
 import { Check, X } from 'lucide-react';
 
 const comparisons = [
-  { feature: 'Lifespan', vinyl: '30+ years', wood: '10-15 years', chainLink: '15-20 years' },
-  { feature: 'Maintenance', vinyl: 'None (just hose off)', wood: 'Paint/stain every 2-3 years', chainLink: 'Rust treatment needed' },
-  { feature: 'Privacy', vinyl: '100% privacy', wood: 'Gaps develop over time', chainLink: 'Zero privacy' },
-  { feature: 'Florida weather', vinyl: 'UV & hurricane resistant', wood: 'Warps, rots, mold', chainLink: 'Rusts, bends in storms' },
-  { feature: 'Curb appeal', vinyl: 'Always looks new', wood: 'Fades and grays', chainLink: 'Industrial look' },
-  { feature: 'Resale value', vinyl: 'Adds $15K+ to home value', wood: 'Adds value if maintained', chainLink: 'Can lower value' },
+  { feature: 'Monthly Cost', solar: 'Locked-in low payment', utility: 'Increases 3-5% yearly', lease: 'Escalating payments' },
+  { feature: 'Ownership', solar: 'You own it 100%', utility: 'Renting power forever', lease: 'Company owns panels' },
+  { feature: 'Home Value', solar: 'Adds $20K+ to value', utility: 'No added value', lease: 'Can complicate sale' },
+  { feature: 'Tax Credits', solar: '30% federal credit (yours)', utility: 'None', lease: 'Company keeps them' },
+  { feature: 'Savings Over 25 Years', solar: '$50,000+ average', utility: '$0 (only expenses)', lease: 'Limited savings' },
+  { feature: 'Energy Independence', solar: 'Full control + battery option', utility: 'At mercy of the grid', lease: 'Partial independence' },
 ];
 
 export default function ComparisonSection() {
@@ -16,10 +16,10 @@ export default function ComparisonSection() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Why Smart Homeowners Choose Vinyl
+            Why Smart Homeowners Choose Solar
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Wood rots. Chain link rusts. Vinyl lasts forever. Here&apos;s the side-by-side comparison.
+            Utility bills keep climbing. Leases have hidden catches. Ownership wins. Here&apos;s the real comparison.
           </p>
         </div>
 
@@ -30,24 +30,24 @@ export default function ComparisonSection() {
               <h3 className="font-semibold text-gray-900 mb-4">{item.feature}</h3>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-sm text-gray-500">Vinyl:</span>
-                    <p className="text-gray-900 font-medium">{item.vinyl}</p>
+                    <span className="text-sm text-gray-500">Own Solar:</span>
+                    <p className="text-gray-900 font-medium">{item.solar}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-sm text-gray-500">Wood:</span>
-                    <p className="text-gray-600">{item.wood}</p>
+                    <span className="text-sm text-gray-500">Utility Power:</span>
+                    <p className="text-gray-600">{item.utility}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-sm text-gray-500">Chain Link:</span>
-                    <p className="text-gray-600">{item.chainLink}</p>
+                    <span className="text-sm text-gray-500">Solar Lease:</span>
+                    <p className="text-gray-600">{item.lease}</p>
                   </div>
                 </div>
               </div>
@@ -61,23 +61,23 @@ export default function ComparisonSection() {
             <thead>
               <tr className="bg-gray-50">
                 <th className="text-left py-4 px-6 font-semibold text-gray-900">Feature</th>
-                <th className="text-left py-4 px-6 font-semibold text-emerald-600 bg-emerald-50">Vinyl (Our Pick)</th>
-                <th className="text-left py-4 px-6 font-semibold text-gray-500">Wood</th>
-                <th className="text-left py-4 px-6 font-semibold text-gray-500">Chain Link</th>
+                <th className="text-left py-4 px-6 font-semibold text-amber-600 bg-amber-50">Own Solar (Best)</th>
+                <th className="text-left py-4 px-6 font-semibold text-gray-500">Utility Power</th>
+                <th className="text-left py-4 px-6 font-semibold text-gray-500">Solar Lease</th>
               </tr>
             </thead>
             <tbody>
               {comparisons.map((item, index) => (
                 <tr key={index} className="border-t border-gray-100">
                   <td className="py-4 px-6 font-medium text-gray-900">{item.feature}</td>
-                  <td className="py-4 px-6 bg-emerald-50/50">
+                  <td className="py-4 px-6 bg-amber-50/50">
                     <div className="flex items-center gap-2">
-                      <Check className="w-5 h-5 text-emerald-500" />
-                      <span className="text-gray-900">{item.vinyl}</span>
+                      <Check className="w-5 h-5 text-amber-500" />
+                      <span className="text-gray-900">{item.solar}</span>
                     </div>
                   </td>
-                  <td className="py-4 px-6 text-gray-600">{item.wood}</td>
-                  <td className="py-4 px-6 text-gray-600">{item.chainLink}</td>
+                  <td className="py-4 px-6 text-gray-600">{item.utility}</td>
+                  <td className="py-4 px-6 text-gray-600">{item.lease}</td>
                 </tr>
               ))}
             </tbody>
@@ -86,7 +86,7 @@ export default function ComparisonSection() {
 
         <div className="text-center">
           <p className="text-gray-600 mb-6">
-            The math is simple: <span className="font-semibold text-gray-900">vinyl costs more upfront but saves you thousands over time.</span>
+            The math is simple: <span className="font-semibold text-gray-900">owning solar saves you thousands while utility bills only go up.</span>
           </p>
           <ScrollLink
             href="#estimate-form"

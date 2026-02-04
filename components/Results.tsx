@@ -1,57 +1,52 @@
 'use client';
 
-import Image from 'next/image';
 import ScrollLink from './ScrollLink';
+import { Sun } from 'lucide-react';
 
 const beforeAfter = [
   {
-    src: '/results/result-2.jpg',
-    alt: 'Before fence installation',
+    alt: 'Before solar installation',
     title: 'Before',
-    description: 'Open yard with no privacy or security',
+    description: 'High electric bills draining your wallet every month',
   },
   {
-    src: '/results/result-3.jpg',
-    alt: 'After fence installation',
+    alt: 'After solar installation',
     title: 'After',
-    description: 'Complete transformation in just one day',
+    description: 'Generating clean energy and massive savings',
   },
 ];
 
 const gallery = [
   {
-    src: '/results/result-1.jpg',
-    alt: 'White vinyl privacy fence installation',
-    title: 'Privacy Fence',
-    description: '6ft white vinyl for complete backyard privacy',
-    category: 'Privacy',
+    alt: 'Residential rooftop solar installation',
+    title: 'Roof Mount System',
+    description: 'Sleek panels that blend with your roof design',
+    category: 'Residential',
   },
   {
-    src: '/results/result-4.jpg',
-    alt: 'Long vinyl fence installation',
-    title: 'Property Line Fence',
-    description: 'Full perimeter protection for large lots',
-    category: 'Perimeter',
-  },
-  {
-    src: '/results/result-5.jpg',
-    alt: 'Premium vinyl fence in Davenport Florida',
-    title: 'Premium Vinyl',
-    description: 'Maintenance-free beauty that lasts 30+ years',
+    alt: 'Large solar panel array',
+    title: 'Full Roof Coverage',
+    description: 'Maximum production for energy-hungry homes',
     category: 'Premium',
+  },
+  {
+    alt: 'Solar installation in Davenport Florida',
+    title: 'Florida Optimized',
+    description: 'Engineered for our 300+ days of sunshine',
+    category: 'Local',
   },
 ];
 
 export default function Results() {
   return (
-    <section id="results" className="py-20 bg-emerald-950">
+    <section id="results" className="py-20 bg-amber-950">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            From Open Yard to Private Oasis
+            From High Bills to Energy Freedom
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Real transformations from your neighbors in Davenport. This could be your backyard next week.
+            Real installations from your neighbors in Davenport. Your home could be generating power this month.
           </p>
         </div>
 
@@ -63,12 +58,10 @@ export default function Results() {
               className="group relative rounded-2xl overflow-hidden cursor-pointer hover:-translate-y-2 hover:scale-[1.01] transition-all duration-500"
             >
               <div className="aspect-[4/3] relative">
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+                {/* Placeholder */}
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-800 to-amber-900 flex items-center justify-center">
+                  <Sun className="w-16 h-16 text-amber-600/50" />
+                </div>
 
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
@@ -94,21 +87,18 @@ export default function Results() {
               key={index}
               className="group relative rounded-2xl overflow-hidden cursor-pointer hover:-translate-y-2 hover:scale-[1.02] transition-all duration-500"
             >
-              {/* Image */}
+              {/* Placeholder */}
               <div className="aspect-[4/3] relative">
-                <Image
-                  src={result.src}
-                  alt={result.alt}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-800 to-amber-900 flex items-center justify-center">
+                  <Sun className="w-12 h-12 text-amber-600/50" />
+                </div>
 
                 {/* Gradient Overlay - Always visible but more intense on hover */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4 z-10">
-                  <span className="inline-block bg-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+                  <span className="inline-block bg-amber-500 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
                     {result.category}
                   </span>
                 </div>
@@ -130,13 +120,13 @@ export default function Results() {
         {/* CTA */}
         <div className="text-center mt-14">
           <p className="text-gray-400 mb-6">
-            Ready to transform your property?
+            Ready to start saving with solar?
           </p>
           <ScrollLink
             href="#estimate-form"
             className="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-400 text-gray-900 px-8 py-4 rounded-xl text-lg font-bold shadow-lg shadow-amber-500/30 hover:shadow-amber-400/50 hover:-translate-y-1 transition-all duration-300"
           >
-            <span>Get This Look for Your Home</span>
+            <span>Get Solar for Your Home</span>
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>

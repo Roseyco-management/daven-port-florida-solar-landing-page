@@ -4,7 +4,7 @@ import ScrollLink from './ScrollLink';
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center relative bg-gradient-to-br from-emerald-900 via-emerald-950 to-green-950 overflow-hidden px-6 py-10">
+    <section className="min-h-screen flex flex-col items-center justify-center relative bg-gradient-to-br from-amber-900 via-amber-950 to-orange-950 overflow-hidden px-6 py-10">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -18,39 +18,39 @@ export default function Hero() {
       {/* Gradient Overlays */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl animate-fade-in-up">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-5 py-2 rounded-full text-white text-sm font-medium mb-6">
-          <span className="flex items-center justify-center w-5 h-5 bg-emerald-500 rounded-full text-xs">✓</span>
-          500+ Happy Homeowners in Davenport
+          <span className="flex items-center justify-center w-5 h-5 bg-amber-500 rounded-full text-xs">✓</span>
+          500+ Solar Installations in Davenport
         </div>
 
         {/* H1 */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4">
-          Your Dream Fence, Installed This Month
+          Power Your Home with Sunshine
         </h1>
 
         {/* Subheadline */}
         <p className="text-xl sm:text-2xl text-white/80 mb-10 max-w-2xl mx-auto">
-          Premium vinyl fencing that lasts 30+ years — without the premium price tag.
+          Premium solar panels that pay for themselves — start saving from day one.
         </p>
 
         {/* Offer Cards */}
         <div className="flex flex-wrap justify-center gap-5 mb-10">
-          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-8 py-6 text-center min-w-[140px] hover:bg-white/15 hover:border-emerald-400 hover:-translate-y-1 transition-all duration-300">
-            <span className="block text-4xl font-extrabold text-emerald-400">$0</span>
+          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-8 py-6 text-center min-w-[140px] hover:bg-white/15 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300">
+            <span className="block text-4xl font-extrabold text-amber-400">$0</span>
             <span className="block text-white/90 text-sm font-medium mt-2">Down</span>
           </div>
-          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-8 py-6 text-center min-w-[140px] hover:bg-white/15 hover:border-emerald-400 hover:-translate-y-1 transition-all duration-300">
-            <span className="block text-4xl font-extrabold text-emerald-400">$0</span>
+          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-8 py-6 text-center min-w-[140px] hover:bg-white/15 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300">
+            <span className="block text-4xl font-extrabold text-amber-400">$0</span>
             <span className="block text-white/90 text-sm font-medium mt-2">Installation</span>
           </div>
-          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-8 py-6 text-center min-w-[140px] hover:bg-white/15 hover:border-emerald-400 hover:-translate-y-1 transition-all duration-300">
-            <span className="block text-4xl font-extrabold text-emerald-400">0%</span>
+          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-8 py-6 text-center min-w-[140px] hover:bg-white/15 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300">
+            <span className="block text-4xl font-extrabold text-amber-400">0%</span>
             <span className="block text-white/90 text-sm font-medium mt-2">Interest O.A.C</span>
           </div>
         </div>
@@ -63,7 +63,7 @@ export default function Hero() {
         {/* CTA Button */}
         <ScrollLink
           href="#estimate-form"
-          className="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-9 py-4 rounded-xl text-lg font-semibold shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:-translate-y-0.5 transition-all duration-300"
+          className="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-600 text-white px-9 py-4 rounded-xl text-lg font-semibold shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 hover:-translate-y-0.5 transition-all duration-300"
         >
           <span>Get My Free Quote</span>
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
