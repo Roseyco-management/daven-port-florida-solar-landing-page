@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-amber-950 pt-16 pb-6">
+    <footer className="bg-orange-950 pt-16 pb-6">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
           <div>
@@ -21,14 +21,14 @@ export default function Footer() {
               href="https://davenportsolar.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-amber-400 transition-colors"
+              className="text-gray-400 hover:text-orange-400 transition-colors"
             >
               davenportsolar.com
             </Link>
           </div>
         </div>
 
-        <div className="pt-6 border-t border-amber-900 text-center">
+        <div className="pt-6 border-t border-orange-900 text-center">
           <p className="text-gray-500 text-sm">
             &copy; {new Date().getFullYear()} Davenport Solar. All rights reserved.
           </p>

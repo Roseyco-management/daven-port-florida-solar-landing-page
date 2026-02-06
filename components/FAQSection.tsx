@@ -7,27 +7,35 @@ import { ChevronDown } from 'lucide-react';
 const faqs = [
   {
     question: 'How much does a solar system cost?',
-    answer: 'Every home is different, which is why we provide free, customized quotes. Most homeowners pay $0 down and less per month than their current electric bill. Plus, you get the 30% federal tax credit — that\'s real money back in your pocket.',
+    answer: 'Many Davenport homeowners see system costs in the tens of thousands before incentives, but financing often makes the monthly payment lower than their current electric bill. Plus, you get the 30% federal Residential Clean Energy tax credit \u2014 that\u2019s real money back in your pocket. Every home is different, which is why we provide free, customized quotes.',
   },
   {
     question: 'How long does installation take?',
-    answer: 'Most residential solar systems are installed in just 1-2 days. The permitting process typically takes 2-4 weeks, but we handle all the paperwork for you. From signing to flipping the switch, expect about 4-6 weeks total.',
+    answer: 'Most residential solar systems are installed in just 1\u20132 days once permits are cleared. The permitting process typically takes 2\u20134 weeks, but we handle all the paperwork for you. From signing to flipping the switch, expect about 4\u20136 weeks total.',
   },
   {
     question: 'Do I need HOA approval?',
-    answer: 'Florida has strong solar rights laws — your HOA cannot prohibit solar panels. We\'ll help you navigate any guidelines they do have and provide all documentation needed for a smooth approval.',
+    answer: 'Florida has strong solar rights laws \u2014 your HOA cannot prohibit solar panels. We\u2019ll help you navigate any guidelines they do have and provide all documentation needed for a smooth approval.',
   },
   {
     question: 'What happens during power outages?',
     answer: 'Standard grid-tied systems shut off during outages for safety. Want backup power? We offer battery storage options that keep your essentials running when the grid goes down.',
   },
   {
-    question: 'How does financing work?',
-    answer: 'We offer $0 down financing with payments often lower than your current electric bill. Many homeowners see positive cash flow from day one. We\'ll show you all options during your free consultation.',
+    question: 'What if my roof isn\u2019t perfect for solar?',
+    answer: 'Not every roof is ideal, and we\u2019ll tell you honestly. We assess shading, roof age, and orientation before recommending a system. If your roof needs work first, we\u2019ll let you know upfront \u2014 no surprises.',
   },
   {
-    question: 'What if I don\'t like the quote?',
-    answer: 'No pressure, ever. Our estimates are 100% free with no obligation. If it\'s not the right fit or timing, no hard feelings. We\'d rather earn your trust than push a sale.',
+    question: 'What happens if I move?',
+    answer: 'Solar can increase your home\u2019s resale value. Studies show homes with solar sell faster and for more. Your system becomes a selling point, not a liability.',
+  },
+  {
+    question: 'How does financing work?',
+    answer: 'We offer $0 down financing with payments often lower than your current electric bill. Many homeowners see positive cash flow from day one. We\u2019ll show you all options during your free consultation.',
+  },
+  {
+    question: 'What if I don\u2019t like the quote?',
+    answer: 'If you don\u2019t like the quote, you walk away. No fees, no contracts, no hard-sell. We\u2019d rather be your most transparent bid than your pushiest one.',
   },
 ];
 
@@ -79,9 +87,9 @@ export default function FAQSection() {
           </p>
           <ScrollLink
             href="#estimate-form"
-            className="inline-flex items-center gap-3 bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 hover:-translate-y-0.5 transition-all duration-300"
+            className="inline-flex items-center gap-3 bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all duration-300"
           >
-            <span>Schedule My Free Consultation</span>
+            <span>Get My Free Quote</span>
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>

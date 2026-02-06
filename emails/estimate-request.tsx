@@ -16,13 +16,7 @@ interface EstimateRequestEmailProps {
   email: string;
   phone: string;
   address: string;
-  city: string;
-  state: string;
-  zip: string;
   propertyRole: string;
-  preferredDate: string;
-  preferredTime: string;
-  notes?: string;
 }
 
 export default function EstimateRequestEmail({
@@ -31,21 +25,15 @@ export default function EstimateRequestEmail({
   email,
   phone,
   address,
-  city,
-  state,
-  zip,
   propertyRole,
-  preferredDate,
-  preferredTime,
-  notes,
 }: EstimateRequestEmailProps) {
   return (
     <Html>
       <Head />
-      <Preview>New Fence Estimate Request from {firstName} {lastName}</Preview>
+      <Preview>New Solar Quote Request from {firstName} {lastName}</Preview>
       <Body style={main}>
         <Container style={container}>
-          <Heading style={h1}>New Estimate Request</Heading>
+          <Heading style={h1}>New Solar Quote Request</Heading>
 
           <Section style={section}>
             <Heading as="h2" style={h2}>Contact Information</Heading>
@@ -60,31 +48,12 @@ export default function EstimateRequestEmail({
           <Section style={section}>
             <Heading as="h2" style={h2}>Property Address</Heading>
             <Text style={text}>{address}</Text>
-            <Text style={text}>{city}, {state} {zip}</Text>
           </Section>
-
-          <Hr style={hr} />
-
-          <Section style={section}>
-            <Heading as="h2" style={h2}>Preferred Appointment</Heading>
-            <Text style={text}><strong>Date:</strong> {preferredDate}</Text>
-            <Text style={text}><strong>Time:</strong> {preferredTime === 'morning' ? 'Morning (8AM - 12PM)' : preferredTime === 'afternoon' ? 'Afternoon (12PM - 4PM)' : 'Evening (4PM - 7PM)'}</Text>
-          </Section>
-
-          {notes && (
-            <>
-              <Hr style={hr} />
-              <Section style={section}>
-                <Heading as="h2" style={h2}>Additional Notes</Heading>
-                <Text style={text}>{notes}</Text>
-              </Section>
-            </>
-          )}
 
           <Hr style={hr} />
 
           <Text style={footer}>
-            This estimate request was submitted via the Davenport Florida Fences website.
+            This quote request was submitted via the Davenport Florida Solar website.
           </Text>
         </Container>
       </Body>
