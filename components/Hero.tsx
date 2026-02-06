@@ -63,11 +63,6 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="inline-flex items-center gap-2 bg-orange-500/20 border border-orange-500/40 rounded-full px-5 py-2 mb-8">
-          <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
-          <p className="text-yellow-300 font-medium text-sm">Limited spots available this month — claim yours now</p>
-        </div>
-
         {/* CTA Button */}
         <ScrollLink
           href="#estimate-form"
