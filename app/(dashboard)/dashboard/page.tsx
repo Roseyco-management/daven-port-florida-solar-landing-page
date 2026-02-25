@@ -3,11 +3,11 @@ import {
   getGA4Summary,
   getGA4DailySessions,
   getGA4ChannelBreakdown,
-  getClarityMetrics,
+  getGSCSummary,
 } from "@/lib/roseyco/analytics";
 import LeadMetricsCards from "@/components/dashboard/metrics/LeadMetricsCards";
 import GA4MetricsCards from "@/components/dashboard/metrics/GA4MetricsCards";
-import ClarityMetricsCards from "@/components/dashboard/metrics/ClarityMetricsCards";
+import GSCMetricsCards from "@/components/dashboard/metrics/GSCMetricsCards";
 import LeadsOverTimeChart from "@/components/dashboard/charts/LeadsOverTimeChart";
 import TrafficSourcesChart from "@/components/dashboard/charts/TrafficSourcesChart";
 import PropertyRoleDonutChart from "@/components/dashboard/charts/PropertyRoleDonutChart";
@@ -25,7 +25,7 @@ async function getDashboardData() {
     .split("T")[0];
   const endIso = new Date().toISOString().split("T")[0];
 
-  const [leadsResult, ga4Summary, ga4Daily, ga4Channels, clarity] =
+  const [leadsResult, ga4Summary, ga4Daily, ga4Channels, gsc] =
     await Promise.all([
       supabase
         .from("leads")
@@ -34,7 +34,7 @@ async function getDashboardData() {
       getGA4Summary(startIso, endIso),
       getGA4DailySessions(startIso, endIso),
       getGA4ChannelBreakdown(startIso, endIso),
-      getClarityMetrics(startIso, endIso),
+      getGSCSummary(startIso, endIso),
     ]);
 
   const leads = leadsResult.data || [];
@@ -60,7 +60,7 @@ async function getDashboardData() {
     ga4Summary,
     ga4Daily,
     ga4Channels,
-    clarity,
+    gsc,
   };
 }
 
@@ -93,9 +93,9 @@ export default async function DashboardPage() {
         <GA4MetricsCards {...data.ga4Summary} />
       </div>
 
-      {/* Clarity KPIs */}
+      {/* GSC KPIs */}
       <div className="col-span-12">
-        <ClarityMetricsCards {...data.clarity} />
+        <GSCMetricsCards {...data.gsc} />
       </div>
 
       {/* Sessions bar chart */}

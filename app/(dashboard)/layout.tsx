@@ -1,7 +1,6 @@
 "use client";
 
 import { SidebarProvider, useSidebar } from "@/context/DashboardSidebarContext";
-import { ThemeProvider } from "@/context/DashboardThemeContext";
 import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import React from "react";
@@ -47,10 +46,8 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ThemeProvider>
-      <SidebarProvider>
-        <DashboardShell>{children}</DashboardShell>
-      </SidebarProvider>
-    </ThemeProvider>
+    <SidebarProvider>
+      <DashboardShell>{children}</DashboardShell>
+    </SidebarProvider>
   );
 }

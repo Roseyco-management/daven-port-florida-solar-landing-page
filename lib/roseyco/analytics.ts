@@ -26,12 +26,11 @@ export interface GA4ChannelRow {
   sessions: number;
 }
 
-export interface ClarityMetrics {
-  totalSessions: number;
-  distinctUsers: number;
-  rageclicks: number;
-  deadClicks: number;
-  scrollDepth: number;
+export interface GSCSummaryMetrics {
+  clicks: number;
+  impressions: number;
+  ctr: number;
+  avgPosition: number;
 }
 
 export async function getGA4Summary(
@@ -101,7 +100,6 @@ export async function getGA4ChannelBreakdown(
 
     if (!data || data.length === 0) return [];
 
-    // Aggregate sessions by channel across date range
     const totals: Record<string, number> = {};
     for (const row of data) {
       totals[row.channel] = (totals[row.channel] || 0) + (row.sessions || 0);
@@ -117,46 +115,31 @@ export async function getGA4ChannelBreakdown(
   }
 }
 
-export async function getClarityMetrics(
+export async function getGSCSummary(
   startDate: string,
   endDate: string
-): Promise<ClarityMetrics> {
+): Promise<GSCSummaryMetrics> {
   try {
     const db = getRoseyCoClient();
     const { data } = await db
-      .from("clarity_daily_metrics")
-      .select(
-        "total_sessions, distinct_users, rage_clicks, dead_clicks, scroll_depth"
-      )
+      .from("gsc_daily_metrics")
+      .select("clicks, impressions, ctr, avg_position")
       .eq("client_id", CLIENT_ID)
       .gte("date", startDate)
       .lte("date", endDate);
 
     if (!data || data.length === 0)
-      return {
-        totalSessions: 0,
-        distinctUsers: 0,
-        rageclicks: 0,
-        deadClicks: 0,
-        scrollDepth: 0,
-      };
+      return { clicks: 0, impressions: 0, ctr: 0, avgPosition: 0 };
 
-    return {
-      totalSessions: data.reduce((s, r) => s + (r.total_sessions || 0), 0),
-      distinctUsers: data.reduce((s, r) => s + (r.distinct_users || 0), 0),
-      rageclicks: data.reduce((s, r) => s + (r.rage_clicks || 0), 0),
-      deadClicks: data.reduce((s, r) => s + (r.dead_clicks || 0), 0),
-      scrollDepth:
-        data.reduce((s, r) => s + (r.scroll_depth || 0), 0) / data.length,
-    };
+    const clicks = data.reduce((s, r) => s + (r.clicks || 0), 0);
+    const impressions = data.reduce((s, r) => s + (r.impressions || 0), 0);
+    const ctr = impressions > 0 ? clicks / impressions : 0;
+    const avgPosition =
+      data.reduce((s, r) => s + (r.avg_position || 0), 0) / data.length;
+
+    return { clicks, impressions, ctr, avgPosition };
   } catch (err) {
-    console.error("Clarity metrics error:", err);
-    return {
-      totalSessions: 0,
-      distinctUsers: 0,
-      rageclicks: 0,
-      deadClicks: 0,
-      scrollDepth: 0,
-    };
+    console.error("GSC summary error:", err);
+    return { clicks: 0, impressions: 0, ctr: 0, avgPosition: 0 };
   }
 }
