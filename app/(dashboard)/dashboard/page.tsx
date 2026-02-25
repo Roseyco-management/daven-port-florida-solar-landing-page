@@ -3,9 +3,11 @@ import {
   getGA4Summary,
   getGA4DailySessions,
   getGA4ChannelBreakdown,
-} from "@/lib/ga4/client";
+  getClarityMetrics,
+} from "@/lib/roseyco/analytics";
 import LeadMetricsCards from "@/components/dashboard/metrics/LeadMetricsCards";
 import GA4MetricsCards from "@/components/dashboard/metrics/GA4MetricsCards";
+import ClarityMetricsCards from "@/components/dashboard/metrics/ClarityMetricsCards";
 import LeadsOverTimeChart from "@/components/dashboard/charts/LeadsOverTimeChart";
 import TrafficSourcesChart from "@/components/dashboard/charts/TrafficSourcesChart";
 import PropertyRoleDonutChart from "@/components/dashboard/charts/PropertyRoleDonutChart";
@@ -16,18 +18,32 @@ export const dynamic = "force-dynamic";
 async function getDashboardData() {
   const supabase = createServerSupabaseClient();
 
-  const [leadsResult, ga4Summary, ga4Daily, ga4Channels] = await Promise.all([
-    supabase.from("leads").select("*").order("created_at", { ascending: false }),
-    getGA4Summary("30daysAgo", "today"),
-    getGA4DailySessions("30daysAgo", "today"),
-    getGA4ChannelBreakdown("30daysAgo", "today"),
-  ]);
+  const start = "30daysAgo";
+  const end = "today";
+  const startIso = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)
+    .toISOString()
+    .split("T")[0];
+  const endIso = new Date().toISOString().split("T")[0];
+
+  const [leadsResult, ga4Summary, ga4Daily, ga4Channels, clarity] =
+    await Promise.all([
+      supabase
+        .from("leads")
+        .select("*")
+        .order("created_at", { ascending: false }),
+      getGA4Summary(startIso, endIso),
+      getGA4DailySessions(startIso, endIso),
+      getGA4ChannelBreakdown(startIso, endIso),
+      getClarityMetrics(startIso, endIso),
+    ]);
 
   const leads = leadsResult.data || [];
   const totalLeads = leads.length;
   const homeowners = leads.filter((l) => l.property_role === "homeowner").length;
   const authorizedAgents = leads.filter(
-    (l) => l.property_role === "authorized_agent" || l.property_role === "authorized"
+    (l) =>
+      l.property_role === "authorized_agent" ||
+      l.property_role === "authorized"
   ).length;
 
   const conversionRate =
@@ -44,6 +60,7 @@ async function getDashboardData() {
     ga4Summary,
     ga4Daily,
     ga4Channels,
+    clarity,
   };
 }
 
@@ -57,7 +74,7 @@ export default async function DashboardPage() {
           Overview
         </h2>
         <p className="text-theme-sm text-gray-500 dark:text-gray-400 mb-4">
-          Davenport Florida Solar — Lead & Analytics Dashboard
+          Davenport Florida Solar — last 30 days
         </p>
       </div>
 
@@ -76,6 +93,11 @@ export default async function DashboardPage() {
         <GA4MetricsCards {...data.ga4Summary} />
       </div>
 
+      {/* Clarity KPIs */}
+      <div className="col-span-12">
+        <ClarityMetricsCards {...data.clarity} />
+      </div>
+
       {/* Sessions bar chart */}
       <div className="col-span-12 xl:col-span-8">
         <LeadsOverTimeChart data={data.ga4Daily} />
@@ -87,7 +109,10 @@ export default async function DashboardPage() {
           series={[
             data.homeowners,
             data.authorizedAgents,
-            Math.max(0, data.totalLeads - data.homeowners - data.authorizedAgents),
+            Math.max(
+              0,
+              data.totalLeads - data.homeowners - data.authorizedAgents
+            ),
           ]}
         />
       </div>
