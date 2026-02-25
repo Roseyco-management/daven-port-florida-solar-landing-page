@@ -3,11 +3,10 @@ import { BetaAnalyticsDataClient } from "@google-analytics/data";
 function createGA4Client() {
   return new BetaAnalyticsDataClient({
     credentials: {
-      client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-      private_key: process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY?.replace(
-        /\\n/g,
-        "\n"
-      ),
+      client_id: process.env.GOOGLE_CLIENT_ID,
+      client_secret: process.env.GOOGLE_CLIENT_SECRET,
+      refresh_token: process.env.GOOGLE_REFRESH_TOKEN,
+      type: "authorized_user",
     },
   });
 }
