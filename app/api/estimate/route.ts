@@ -57,6 +57,27 @@ export async function POST(request: Request) {
       console.error('Supabase exception:', dbException);
     }
 
+    // Redacted agency notification to Elevateo — first name + interest only, no
+    // contact details or address (GDPR data-minimisation). Best-effort; never
+    // blocks the client's own alert above.
+    try {
+      await resend.emails.send({
+        from: 'Davenport Solar <info@landingpage.davenportfloridasolar.com>',
+        to: ['team@elevateoco.com'],
+        subject: 'New lead — Davenport Solar',
+        text: [
+          'New lead — Davenport Solar',
+          `Name: ${firstName ?? ''}`,
+          `Interest: Solar quote${propertyRole ? ` (${propertyRole})` : ''}`,
+          'Source: Solar quote form',
+          '',
+          'Contact details & address withheld — full lead sent to the client.',
+        ].join('\n'),
+      });
+    } catch (agencyErr) {
+      console.error('Agency notify error:', agencyErr);
+    }
+
     return NextResponse.json({ success: true, id: data?.id });
   } catch (error) {
     console.error('API error:', error);
