@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { createClient } from '@supabase/supabase-js';
 import EstimateRequestEmail from '@/emails/estimate-request';
+import { notifyAgencyLead } from '@/lib/agencyNotify';
 
 
 export async function POST(request: Request) {
@@ -57,26 +58,14 @@ export async function POST(request: Request) {
       console.error('Supabase exception:', dbException);
     }
 
-    // Redacted agency notification to Elevateo — first name + interest only, no
-    // contact details or address (GDPR data-minimisation). Best-effort; never
-    // blocks the client's own alert above.
-    try {
-      await resend.emails.send({
-        from: 'Davenport Solar <info@landingpage.davenportfloridasolar.com>',
-        to: ['team@elevateoco.com'],
-        subject: 'New lead — Davenport Solar',
-        text: [
-          'New lead — Davenport Solar',
-          `Name: ${firstName ?? ''}`,
-          `Interest: Solar quote${propertyRole ? ` (${propertyRole})` : ''}`,
-          'Source: Solar quote form',
-          '',
-          'Contact details & address withheld — full lead sent to the client.',
-        ].join('\n'),
-      });
-    } catch (agencyErr) {
-      console.error('Agency notify error:', agencyErr);
-    }
+    // Agency lead notification — the ONE standard shape.
+    // See marketing-ide/docs/LEAD-NOTIFICATION-STANDARD.md. Zero PII by design.
+    await notifyAgencyLead({
+      client: "Davenport Solar",
+      apiKey: process.env.RESEND_API_KEY!,
+      source: "Solar quote form",
+      ownerLabel: "the client",
+    });
 
     return NextResponse.json({ success: true, id: data?.id });
   } catch (error) {
