@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Home, UserPlus, CheckCircle, Loader2 } from 'lucide-react';
+import { Home, UserPlus, CheckCircle, Loader2, Check } from 'lucide-react';
 
 type FormData = {
   propertyRole: string;
@@ -133,7 +133,7 @@ export default function EstimateForm() {
                     'No pressure — the decision is always yours',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-gray-600">
-                      <span className="text-orange-500 font-bold">✓</span>
+                      <Check className="w-5 h-5 text-orange-500 shrink-0 mt-0.5" aria-hidden="true" />
                       {item}
                     </li>
                   ))}
