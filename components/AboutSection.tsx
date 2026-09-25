@@ -14,7 +14,16 @@ export default function AboutSection() {
           >
             Rosey Co&apos;s web development team
           </a>
-          , a marketing agency helping local businesses rank on Google.
+          , a marketing agency helping local businesses rank on Google. Read{' '}
+          <a
+            href="https://www.roseyco.com/uk/case-studies/davenport-florida-solar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-orange-700 underline underline-offset-2"
+          >
+            the Davenport Florida Solar case study
+          </a>
+          .
         </p>
       </div>
     </section>
