@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "partytown": "partytown copylib public/~partytown",
+    "build": "npm run partytown && next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "@qwik.dev/partytown": "^0.11.2",
     "@react-email/components": "^1.0.7",
     "@react-email/render": "^2.0.4",
     "@supabase/ssr": "^0.8.0",
