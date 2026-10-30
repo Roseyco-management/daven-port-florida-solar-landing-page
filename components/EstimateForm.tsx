@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Script from 'next/script';
 import { Home, UserPlus, CheckCircle, Loader2, Check } from 'lucide-react';
 
 type FormData = {
@@ -92,7 +93,8 @@ export default function EstimateForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        // Where the visitor came from (public/attribution.js), forwarded to RoseyCo Analytics.
+        body: JSON.stringify({ ...formData, attribution: (window as unknown as { rcAttribution?: () => unknown }).rcAttribution?.() }),
       });
 
       if (!response.ok) {
@@ -157,6 +159,7 @@ export default function EstimateForm() {
 
   return (
     <section id="estimate-form" className="py-20 bg-white">
+      <Script src="/attribution.js" strategy="afterInteractive" />
       <div className="max-w-2xl mx-auto px-6">
         <div className="bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden">
           {/* Header */}

@@ -3,6 +3,7 @@ import { Resend } from 'resend';
 import { createClient } from '@supabase/supabase-js';
 import EstimateRequestEmail from '@/emails/estimate-request';
 import { notifyAgencyLead } from '@/lib/agencyNotify';
+import { postLeadToRca } from '@/lib/rcaLead';
 
 
 export async function POST(request: Request) {
@@ -66,6 +67,9 @@ export async function POST(request: Request) {
       source: "Solar quote form",
       ownerLabel: "the client",
     });
+
+    // Count it in RoseyCo Analytics (first name + source only; never blocks the reply).
+    await postLeadToRca({ firstName, service: 'Solar quote', externalId: data?.id, attribution: body.attribution });
 
     return NextResponse.json({ success: true, id: data?.id });
   } catch (error) {
